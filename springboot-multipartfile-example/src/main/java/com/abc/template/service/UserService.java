@@ -23,24 +23,29 @@ public class UserService {
 		int size = file.size();
 		user2.setCount(size);
 
-		String multipartFile, type = null;
+		String multipartFile;
+		byte[] type = null;
 		String multipartFile1 = "";
 		for (int i = 0; i < file.size(); i++) {
 
 			multipartFile = file.iterator().next().getOriginalFilename().concat(",");
 
 			multipartFile1 = multipartFile1 + multipartFile;
+			
+			type = multipartFile.getBytes();
+			
 
-			type = file.iterator().next().getContentType();
+			//type = file.iterator().next().getContentType();
 			System.out.println(type);
 
 		}
-
 		String[] strings = multipartFile1.split(",");
-		System.out.println(type);
+		//System.out.println(type);
 
 		user2.setFileNames(Arrays.asList(strings));
 		user2.setContent1(type);
+		
+		System.out.println(type);
 		return user2;
 
 	}

@@ -24,5 +24,5 @@ public class User {
 	@Column(name = "file_names")
 	private List<String> fileNames;
 
-	private String content1;
+	private byte[] content1;
 }
